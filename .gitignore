@@ -3,3 +3,4 @@
 
 .env.local
 .eslintrc.json
+package-lock.json

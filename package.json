@@ -8,14 +8,15 @@
     "build": "tsc",
     "start": "npx tsx -w",
     "dev": "nodemon ./src/server.ts",
-    "eslint": "eslint src/server.ts"
+    "eslint": "eslint src/server.ts",
+    "format": "prettier --write ."
   },
   "author": "gamas",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.3",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
     "@typescript-eslint/parser": "^8.4.0",
     "dotenv": "^16.4.5",
