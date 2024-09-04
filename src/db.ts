@@ -1,5 +1,5 @@
 import pg from "pg";
-import { db_config } from "./config";
+import { db_config } from "./config/index.ts";
 
 const pool = new pg.Pool({
   user: db_config.db_user,

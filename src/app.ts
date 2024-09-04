@@ -1,5 +1,6 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
+import { authRouter } from "./routes/index.ts";
 
 const app = express();
 
@@ -9,8 +10,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
-});
+app.use("/auth", authRouter)
 
 export default app;

@@ -1,4 +1,4 @@
-import { DatabaseConfig } from "../types/config_types";
+import { DatabaseConfig } from "../types/config";
 
 const db_config: DatabaseConfig = {
   db_user: process.env.DATABASE_USER || "default_user",
