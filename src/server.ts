@@ -4,7 +4,7 @@ import { server_config } from "./config/index.ts";
 
 const port = server_config.port;
 
-// Start server
+// Start server and listen
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

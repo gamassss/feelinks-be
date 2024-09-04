@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  username String  @unique
+  password String
+  createdAt DateTime @default(now())
+  journals Journal[]
+}
+
+model Journal {
+  id        Int     @id @default(autoincrement())
+  title     String
+  content   String?
+  createdAt DateTime @default(now())
+  author    User    @relation(fields: [authorId], references: [id])
+  authorId  Int
+  emotionAnalysis EmotionAnalysis[]
+}
+
+model Emotion {
+  id        Int     @id @default(autoincrement())
+  label     String
+  emotionAnalysis EmotionAnalysis[]
+}
+
+model EmotionAnalysis {
+  id        Int     @id @default(autoincrement())
+  probability Float
+  journal    Journal    @relation(fields: [journalId], references: [id])
+  emotion    Emotion    @relation(fields: [emotionId], references: [id])
+
+  journalId   Int
+  emotionId   Int
+}

@@ -1,6 +1,8 @@
 /node_modules
 /dist
+/prisma/migrations
 
 .env.local
+.env
 .eslintrc.json
 package-lock.json

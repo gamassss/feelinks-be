@@ -112,7 +112,7 @@
   },
   "include": [
     "src/**/*"
-  ],
+, "migrations"  ],
   "exclude": [
     "node_modules/*",
   ]

@@ -1,4 +1,3 @@
-import pg from "pg";
 import { DatabaseConfig } from "../types/config_types";
 
 const db_config: DatabaseConfig = {
@@ -9,14 +8,4 @@ const db_config: DatabaseConfig = {
   db_name: process.env.DATABASE_NAME || "default_database"
 };
 
-const pool = new pg.Pool({
-  user: db_config.db_user,
-  password: db_config.db_password,
-  host: db_config.db_host,
-  port: db_config.db_port,
-  database: db_config.db_name,
-  max: 10,
-  idleTimeoutMillis: 30000
-});
-
-export default pool;
+export default db_config;
