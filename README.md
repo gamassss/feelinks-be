@@ -5,7 +5,7 @@ _**FeelinksAI**_ is a web-based application that allows users to track their emo
 This repository contains the **backend** for the Feelinks application. For the **frontend** of the application, please visit the [Feelinks Frontend Repository](https://github.com/gamassss/feelinks-fe).
 
 ## System Architecture
-![feelinks](https://github.com/user-attachments/assets/6831f53c-23cc-4eb9-a3b4-633405e84935)
+![feelinks](https://github.com/user-attachments/assets/33853ba5-0e53-4ebe-8834-de6fabc6b320)
 
 The system is divided into the following major components:
 - **Frontend**: Built with NextJS, it sends API requests for user authentication, journal management, and emotion analysis.
