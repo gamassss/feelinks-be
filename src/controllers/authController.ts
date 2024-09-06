@@ -14,14 +14,12 @@ export const signupController = async (req: Request, res: Response) => {
     const errors = await validate(createUserDto);
 
     if (errors.length > 0) {
-      sendBadRequestError(
+      return sendBadRequestError(
         res,
-        errors
-          .map((err) => ({
-            property: err.property,
-            constraints: err.constraints
-          }))
-          .toString()
+        errors.map(err => ({
+          property: err.property,
+          constraints: err.constraints
+        }))
       );
     }
 

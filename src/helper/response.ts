@@ -1,6 +1,6 @@
 import { Response } from "express";
-import { HTTP_STATUS_CODE } from "../constants/statusCodes";
-import { ResponseFormat } from "../types/response";
+import { HTTP_STATUS_CODE } from "../constants/statusCodes.ts";
+import { ResponseFormat } from "../types/response.ts";
 
 export const statusText = (statusCode: number): string => {
   switch (statusCode) {
@@ -24,7 +24,7 @@ export const setSuccessResponse = <T>(code: number, message: string, data: T): R
   };
 };
 
-export const setErrorResponse = (code: number, message: string, error: string): ResponseFormat<null> => {
+export const setErrorResponse = (code: number, message: string, error: string | object[]): ResponseFormat<null> => {
   return {
     success: false,
     code,
@@ -55,7 +55,7 @@ export const sendInternalServerError = (res: Response) => {
   return res.status(HTTP_STATUS_CODE.InternalServerError).send(response);
 };
 
-export const sendBadRequestError = (res: Response, error: string) => {
+export const sendBadRequestError = (res: Response, error: string | object[]) => {
   const response: ResponseFormat<null> = setErrorResponse(
     HTTP_STATUS_CODE.BadRequest,
     statusText(HTTP_STATUS_CODE.BadRequest),
