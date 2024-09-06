@@ -1,15 +1,19 @@
 import pool from "../db.ts";
-import { User } from "../types/user";
+import { CreateUserResponseDTO } from "../dto/user.dto.ts";
 
-export const findUserByUsername = (username: User["username"]) => {
-  return pool.query("SELECT * FROM users where username = $1", [username]);
+export const findUserByUsername = (username: string) => {
+  return pool.query("SELECT * FROM users WHERE username = $1", [username]);
 };
 
-export const createUser = async (username: User["username"], password: User["password"]): Promise<User> => {
-  const result = await pool.query("INSERT INTO users (username, password) values ($1, $2) RETURNING *", [
+export const createUser = async (username: string, password: string): Promise<CreateUserResponseDTO> => {
+  const result = await pool.query("INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *", [
     username,
     password
   ]);
 
-  return result.rows[0];
+  return {
+    id: result.rows[0].id,
+    username,
+    createdAt: result.rows[0].createdAt
+  };
 };
