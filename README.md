@@ -19,6 +19,7 @@ src/
 |-- config/            # Configuration settings (e.g., environment variables)
 |-- constants/         # Application-wide constants
 |-- controllers/       # Handles HTTP requests and responses
+|-- dto/               # Data Transfer Objects (DTOs) for defining request/response schemas
 |-- helpers/           # Utility functions and helper methods
 |-- middlewares/       # Express middlewares (e.g., authentication, validation)
 |-- services/          # Business logic and service classes
@@ -26,6 +27,7 @@ src/
 |-- app.ts             # Express application initialization
 |-- db.ts              # Database connection and setup
 |-- server.ts          # Server startup and configuration
+
 ```
 
 ## Database Schema
